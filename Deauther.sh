@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # TERMINAL COLORS
@@ -33,19 +34,18 @@ function coolexit()
 	title
 	echo -e $BOLD_RED
 	echo " Thanks for using this script"
-	echo -e " My GitHub:$BOLD_WHITE https://github.com/vansh7900"
+	echo -e " My GitHub:$BOLD_WHITE https://github.com/125K"
 	exit
 }
 
 function title() {
 	echo -e $BOLD_GREEN
-	echo "     "
-	echo "                                                                                                 "
-    echo           "     | / / _ | / |/ / __/ // / /    | | /| / (_)___/ __/  _/    / _ \___ ___ ___ __/ /_/ / "
-    echo             "   | |/ / __ |/    /\ \/ _  /     | |/ |/ / /___/ _/_/ /     / // / -_) _ `/ // / __/ _ \ "
-    echo             "   |___/_/ |_/_/|_/___/_//_/      |__/|__/_/   /_/ /___/    /____/\__/\_,_/\_,_/\__/_//_/ "
+	echo "       _   _____   _  ________ __  _      ___     ________  ___                __  __      "
+	echo "  | | / / _ | / |/ / __/ // /   | | /| / (_)___/ __/  _/   / _ \___ ___ ___ __/ /_/ / "
+	echo "  | |/ / __ |/    /\ \/ _  /    | |/ |/ / /___/ _/_/ /    / // / -_) _ `/ // / __/ _ \"
+	echo "  |___/_/ |_/_/|_/___/_//_/     |__/|__/_/   /_/ /___/   /____/\__/\_,_/\_,_/\__/_//_/ "
 	echo -e $BOLD_WHITE
-	echo "				Wi-fi Deauther by Vansh"
+	echo "				Wifi-Deauther by Vansh7900"
 }
 
 function getIFCARD() {
